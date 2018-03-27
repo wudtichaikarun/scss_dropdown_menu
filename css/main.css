@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css?family=Yantramanav:100,300,400,900");
+* {
+  margin: 0;
+  padding: 0; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  font-family: "Yantramanav", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.3;
+  letter-spacing: .7px;
+  color: #ffffff;
+  background-image: linear-gradient(to right bottom, #282828, #ffffff);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh; }
+
+.image {
+  width: 10rem;
+  height: 10rem;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+  position: relative;
+  overflow: hidden; }
+  @media only screen and (max-width: 37.5em) {
+    .image {
+      background-color: skyblue; } }
+  .image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 10rem;
+    background-size: cover; }
+
+.info h3,
+.social h3 {
+  padding: .5rem 0;
+  font-size: 1.7rem;
+  font-weight: 400;
+  border-bottom: 1px solid #ffffff;
+  text-transform: uppercase; }
+
+.info:not(:last-child),
+.social:not(:last-child) {
+  margin-bottom: 2rem; }
+
+.info-list,
+.social-list {
+  list-style: none;
+  padding: 2rem 0; }
+
+.info-item,
+.social-item {
+  padding: .5rem 0;
+  display: flex; }
+  .info-item__icon,
+  .social-item__icon {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem; }
+  .info-item__icon > svg, .info-item img,
+  .social-item__icon > svg,
+  .social-item img {
+    width: 2rem;
+    height: 2rem;
+    fill: #ffffff; }
+  .info-item__detail--label,
+  .social-item__detail--label {
+    font-weight: 400;
+    letter-spacing: 1.2px; }
+  .info-item__detail--content,
+  .social-item__detail--content {
+    font-weight: 100;
+    font-size: 1.3rem; }
+
+.skill:not(:last-child),
+.work:not(:last-child),
+.experience:not(:last-child),
+.education:not(:last-child) {
+  margin-bottom: 2rem; }
+
+.skill h3,
+.work h3,
+.experience h3,
+.education h3 {
+  padding: .5rem 0;
+  font-size: 1.7rem;
+  font-weight: 400;
+  border-bottom: 1px solid #282828;
+  text-transform: uppercase; }
+
+.header {
+  text-transform: uppercase;
+  line-height: 1;
+  margin: 3.8rem 0; }
+  .header .name {
+    font-weight: 900;
+    font-size: 5rem;
+    letter-spacing: 5px; }
+  .header .position {
+    font-weight: 300;
+    font-size: 1.7rem;
+    letter-spacing: 2px; }
+
+.education-header, .work-header {
+  transform: translate(-1.3rem);
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  grid-column-gap: 1.5rem; }
+  .education-header__icon, .work-header__icon {
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid #282828;
+    border-radius: 50%;
+    position: relative; }
+    .education-header__icon svg, .work-header__icon svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 2rem; }
+
+.education-list, .work-list {
+  list-style: none;
+  position: relative; }
+  .education-list .education-item, .education-list .work-item, .work-list .education-item, .work-list .work-item {
+    overflow: hidden;
+    position: relative; }
+
+.education-item, .work-item {
+  z-index: 1; }
+  .education-item:first-child, .work-item:first-child {
+    padding-top: 2rem;
+    margin-top: .5rem; }
+  .education-item:last-child .education-item__block, .work-item:last-child .education-item__block, .education-item:last-child .work-item__block, .work-item:last-child .work-item__block {
+    position: relative;
+    overflow: hidden; }
+  .education-item__block, .work-item__block {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 3rem;
+    border: 2px solid #282828;
+    background-color: #ffffff;
+    border-radius: 50%;
+    float: left; }
+    .education-item__block::after, .work-item__block::after {
+      position: absolute;
+      z-index: -1;
+      content: '';
+      width: 0;
+      border: 1px solid #282828;
+      height: 100%;
+      top: 0;
+      left: .5rem; }
+  .education-item__content, .work-item__content {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    margin-bottom: 2rem; }
+
+.container {
+  max-width: 90rem;
+  margin: 2rem auto;
+  background-color: #f4f2f2;
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.2);
+  min-height: 100rem;
+  display: flex; }
+
+.sidebar {
+  width: 35%;
+  padding: 5rem;
+  background-color: #282828; }
+
+.main {
+  padding: 5rem;
+  color: #282828; }
