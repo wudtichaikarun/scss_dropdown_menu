@@ -1,0 +1,71 @@
+// NAVBAR
+a {
+  color: $color-white;
+  text-decoration: none;
+}
+
+.nav-bar {
+  background: $color-grey-dark-3;
+}
+
+.clearfix {
+  &::before, &::after {
+    content: '';
+    display: block;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+nav > ul {
+  margin: 0 auto;
+  width: 80%;
+}
+
+// first level
+nav ul li {
+  display: block;
+  float: left;
+  position: relative;
+}
+
+nav ul a {
+  display: block;
+  float: left;
+  width: 17rem;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
+nav ul a:hover {
+  background: $color-grey-dark-1;
+}
+
+// 2nd level
+nav ul li ul {
+  margin: 0;
+  padding: 0;
+  display: none;
+  position: absolute;
+  top: 100%;
+  background: $color-grey-dark-3;
+}
+
+nav ul li:hover > ul {
+  display: block;
+}
+
+nav ul li ul li {
+  float: none;
+  position: relative;
+  height: 4.2rem;
+}
+
+// 3nd level
+nav ul ul ul {
+  top: 0;
+  left: 100%; 
+  background: $color-grey-dark-3;
+}
