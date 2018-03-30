@@ -1,0 +1,168 @@
+$navText-color: #EBEBD3; 
+$navBorder-color: #575766;
+.container {
+  margin: 0 auto;
+  width: 95%;
+  max-width: 100rem;
+}
+
+header {
+  background-color: #e54b4b;
+  color: $navText-color;
+  padding: 1rem 0;
+  position: relative;
+}
+
+header::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.logo {
+  float: left;
+  font-size: 2rem;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  span {
+    font-weight: 100;
+  }
+}
+
+.site-nav {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #464655;
+  // height: 0px;
+  // overflow: hidden;
+  clip-path: circle(0 at top right);
+  transition: all ease-in-out 500ms;
+
+  &--open {
+    // height: auto;
+    clip-path: circle(150% at top right);
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    & + li {
+      border-top: 1px solid $navBorder-color; 
+    }
+
+    & .site-nav--icon {
+      display: inline-block;
+      font-size: 2rem;
+      margin-right: 1.3rem;
+
+      width: 2rem;
+      text-align: right;
+      color: rgba(255, 255, 255, .4);
+    }
+
+  }
+
+  a {
+    color: $navText-color;
+    display: block;
+    padding: 2rem 6rem 2rem 3rem;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover, &:focus {
+      background-color: #e4b363;
+      color: #454555;
+    }
+  }
+
+}
+
+// hamberger
+.menu-toggle {
+  padding: 1rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: .5rem;
+  cursor: pointer;
+}
+
+.hamberger,
+.hamberger::before,
+.hamberger::after {
+  content: '';
+  display: block;
+  background: $navText-color;
+  height: 3px;
+  width: 2rem;
+  border-radius: 3px;
+  transition: all ease-in-out 500ms;
+}
+
+.hamberger {
+  &::before {
+    transform: translateY(-6px);
+  }
+
+  &::after {
+    transform: translateY(3px);
+  }
+}
+
+// open hamberger
+.open .hamberger{
+  transform: rotate(45deg);
+
+  &::before {
+    opacity: 0;
+  }
+
+  &::after {
+    transform: translateY(-3px) rotate(-90deg);
+  }
+}
+
+// display size more than 700px
+@media (min-width: 70rem) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .site-nav {
+    height: auto;
+    position: relative;
+    background: transparent;
+    float: right;
+    // reset clip-path
+    clip-path: inherit;
+
+    li {
+      display: inline-block;
+      
+      & + li {
+        border: none;
+        margin-left: 3rem;
+      }
+
+      & .site-nav--icon {
+        display: none;
+      }
+    }
+
+    a {
+      padding: 0;
+      font-size: 2rem;
+      &:hover, &:focus {
+        background: transparent;
+      }
+    }
+
+  }
+}

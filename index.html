@@ -6,19 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" href="/css/main.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 </head>
 <body>
     <H1>PURE CSS HTML CREATE NAVBAR</H1>
 
     <hr><br>
 
-    <nav class="nav-bar">
+    <!-- nav-01-->
+    <!-- <nav class="nav-bar">
       <ul class="nav-menu clearfix">
         <li class="level-1">
           <a href="#">Home</a>
           <ul>
             <li class="level-2">
-              <a href="#">Level-2 ---> </a>
+              <a href="#">Level-2 more</a>
               <ul>
                 <li class="level-3"><a href="">Link Level-3</a></li>
                 <li class="level-3"><a href="">Link Level-3</a></li>
@@ -30,7 +33,7 @@
             <li class="level-2"><a href="#">Level-2</a></li>
             <li class="level-2"><a href="#">Level-2</a></li>
             <li class="level-2">
-                <a href="#">Level-2 ---> </a>
+                <a href="#">Level-2 more</a>
                 <ul>
                   <li class="level-3"><a href="">Link Level-3</a></li>
                   <li class="level-3"><a href="">Link Level-3</a></li>
@@ -61,7 +64,65 @@
           </ul>  
         </li>
       </ul>
-    </nav>
-    
+    </nav> -->
+  
+    <br><hr><br>
+
+    <!-- btn siwtch  -->
+    <p class="btn-switch">					
+      <input 
+         type="radio" 
+         id="yes" 
+         name="switch" 
+         class="btn-switch__radio btn-switch__radio_yes" />
+      <input 
+         type="radio" 
+         checked 
+         id="no" 
+         name="switch" 
+         class="btn-switch__radio btn-switch__radio_no" />		
+      <label 
+          for="yes" 
+          class="btn-switch__label btn-switch__label_yes">
+          <span class="btn-switch__txt">Yes</span>
+      </label>
+      
+      <label 
+          for="no" 
+          class="btn-switch__label btn-switch__label_no">
+           <span class="btn-switch__txt">No</span>
+      </label>	
+    </p>
+
+    <br><br><hr><br>
+
+    <!-- nav-02 -->
+    <header>
+      <div class="container">
+
+        <h1 class="logo">Romantic <span>LOGO</span></h1>
+
+        <nav class="site-nav">
+          <ul>
+            <li><a href="#"><i class="fa fa-home site-nav--icon"></i>Home</a></li>
+            <li><a href="#"><i class="fa fa-info site-nav--icon"></i>About</a></li>
+            <li><a href="#"><i class="fa fa-pencil site-nav--icon"></i>Blog</a></li>
+            <li><a href="#"><i class="fa fa-usd site-nav--icon"></i>Pricing</a></li>
+            <li><a href="#"><i class="fa fa-envelope site-nav--icon"></i>Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="menu-toggle">
+          <div class="hamberger"></div>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, est. Sapiente soluta ratione vel perferendis ex. Maxime qui ipsam nam, molestiae id deserunt cupiditate natus, distinctio eius porro possimus veniam consequatur nobis quos mollitia? Quod alias, autem earum vel facilis numquam temporibus eius beatae fuga sint suscipit, cupiditate labore quisquam?</p>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
+    <script src="./main.js"></script>
 </body>
 </html>
