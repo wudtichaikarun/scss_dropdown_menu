@@ -16,8 +16,7 @@
   }
 
   &__radioInput {
-    // display: none;
-    visibility: hidden;
+    display: none;
   }
 
   &__menu {
@@ -55,7 +54,6 @@
       text-align: center;
       width: 100%;
       display: none;
-      position: relative;
 
       a {
         // clear label float left
@@ -63,7 +61,6 @@
         background-color: $color-primary;
         display: block;
         border-top: 1px solid $color-light-grey-2;
-        z-index: 1000;
       }
 
       a + a {

@@ -1,0 +1,186 @@
+#nav-05 {
+  color: $color-grey-dark-1;
+  background-color: $color-white;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+  padding: .5rem 0 0 0;
+  text-align: center;
+
+  ul {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   display: inline-block;
+   background: $color-grey-light-1;
+   border-radius: .5rem;
+  }
+
+  li {
+    float: left;
+    width: 15rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: rgba(0, 0, 0, .7);
+    cursor: pointer;
+
+    &:hover {
+      background: #d5d5d5;
+      border-radius: .5rem;
+    }
+
+    // show list menu content
+    &:hover > ul.drop-menu li {
+      display: block;
+    }
+
+    // MENU 1 ------
+    &:hover > ul.drop-menu.menu-1 {
+      perspective: 100rem;
+
+      li {
+        opacity: 0;
+        @for $i from 1 through 6 {
+          &:nth-child(#{$i}) {
+            //animation: name duration timing-function delay iteration-count direction fill-mode
+            animation: menu1 (200ms * $i) ease-in-out ((1ms * $i) - 300) 1 normal forwards ;
+          } 
+        }
+      }
+    }
+
+    // MENU 2 ----
+    &:hover > ul.drop-menu.menu-2 {
+      perspective: 100rem;
+
+      li {
+        opacity: 0;
+        transform-origin: top center;
+
+        @for $i from 1 through 6 {
+          &:nth-child(#{$i}) {
+            // animation: name duration timing-function delay iteration-count direction fill-mode
+            animation: menu2 (150ms * $i) ease-in-out ((150ms * $i) - 300) 1 normal forwards ;
+          } 
+        }
+      }
+    } 
+
+    // MENU 3 ----
+    &:hover > ul.drop-menu.menu-3 {
+      perspective: 100rem;
+
+      li {
+        opacity: 0;
+        transform-origin: top center;
+
+        @for $i from 1 through 6 {
+          &:nth-child(#{$i}) {
+            // animation: name duration timing-function delay iteration-count direction fill-mode
+            animation: menu3 300ms ease-in-out ((150ms * $i) - 300) 1 normal forwards ;
+          } 
+        }
+      }
+    } 
+
+    // MENU 4 ----
+    &:hover > ul.drop-menu.menu-4 {
+      perspective: 100rem;
+
+      li {
+        opacity: 0;
+        transform-origin: top right;
+
+        @for $i from 1 through 6 {
+          &:nth-child(#{$i}) {
+            // animation: name duration timing-function delay iteration-count direction fill-mode
+            animation: menu4 300ms ease-in-out ((150ms * $i) - 300) 1 normal forwards ;
+          } 
+        }
+      }
+    } 
+
+    ul.drop-menu {
+      background: $color-white;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding: 0;
+
+      li {
+        background: #666;
+        color: rgba(255, 255, 255, .7);
+
+        // hide list menu content
+        display: none;
+
+        &:hover {
+          background: #606060;
+        }
+
+        &:last-child {
+          border-radius: 0 0 .5rem .5rem;
+        }
+      }
+    }
+  }
+}
+
+@keyframes menu1 {
+  0% {
+    opacity: 0;
+    transform: rotateY(-90deg) translateY(3rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg) translateY(0px);
+  }
+}
+
+@keyframes menu2 {
+  0% {
+    opacity: 0;
+    transform: rotateX(-90deg);
+  }
+
+  60% {
+    transform: translateX(50deg)
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}
+
+@keyframes menu3 {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(-6rem);
+  }
+
+  70% {
+    transform: scale(1.2) translateY(.5rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0px);
+  }
+}
+
+@keyframes menu4 {
+  0% {
+    opacity: 0;
+    transform: rotate(-30deg) translateX(2rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) translateX(0px);
+  }
+}
