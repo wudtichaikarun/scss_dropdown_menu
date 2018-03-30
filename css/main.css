@@ -404,13 +404,15 @@ body {
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   padding: .5rem 0 0 0;
   text-align: center; }
-  #nav-05 ul {
+  #nav-05 > ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: inline-block;
     background: #faf9f9;
     border-radius: .5rem; }
+    #nav-05 > ul > li {
+      border-radius: .5rem .5rem 0 0; }
   #nav-05 li {
     float: left;
     width: 15rem;
@@ -423,8 +425,7 @@ body {
     color: rgba(0, 0, 0, 0.7);
     cursor: pointer; }
     #nav-05 li:hover {
-      background: #d5d5d5;
-      border-radius: .5rem; }
+      background: #d5d5d5; }
     #nav-05 li:hover > ul.drop-menu li {
       display: block; }
     #nav-05 li:hover > ul.drop-menu.menu-1 {
