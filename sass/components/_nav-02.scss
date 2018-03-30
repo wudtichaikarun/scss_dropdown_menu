@@ -1,19 +1,20 @@
 $navText-color: #EBEBD3; 
 $navBorder-color: #575766;
+
 .container {
   margin: 0 auto;
   width: 95%;
   max-width: 100rem;
 }
 
-header {
+#nav-02{
   background-color: #e54b4b;
   color: $navText-color;
   padding: 1rem 0;
   position: relative;
 }
 
-header::after {
+#nav-02::after {
   content: '';
   clear: both;
   display: block;

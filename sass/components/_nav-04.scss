@@ -1,0 +1,75 @@
+#nav-04 {
+  color: $color-grey-light-1;
+  text-align: right;
+  height: 5rem;
+  line-height: 5rem;
+  background-color: $color-primary;
+}
+
+.nav-04 {
+
+  &__label {
+    margin: 0 1rem 0 0;
+    font-size: 2.5rem;
+    line-height: 5rem;
+    display: none;
+  }
+
+  &__radioInput {
+    // display: none;
+    visibility: hidden;
+  }
+
+  &__menu {
+    margin-right: 3rem;
+
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $color-grey-light-1;
+      font-size: 1.5rem;
+      line-height: 5rem;
+    }
+  
+    a + a {
+      margin-left: 3rem;
+    }
+  }
+}
+
+// Working when display size  = 800px or less 
+@media only screen and (max-width: 800px) {
+  .nav-04 {
+    &__label {
+      display: block;
+      cursor: pointer;
+      width: 3rem;
+      float: right;
+    }
+
+    &__radioInput:checked + &__menu {
+      display: block;
+    }
+
+    &__menu {
+      text-align: center;
+      width: 100%;
+      display: none;
+      position: relative;
+
+      a {
+        // clear label float left
+        clear: right;
+        background-color: $color-primary;
+        display: block;
+        border-top: 1px solid $color-light-grey-2;
+        z-index: 1000;
+      }
+
+      a + a {
+        margin: 0;
+      }
+
+    }
+  }
+}
