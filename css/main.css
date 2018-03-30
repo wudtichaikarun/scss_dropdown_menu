@@ -136,7 +136,7 @@ header::after {
   right: 0;
   background: #464655;
   clip-path: circle(0 at top right);
-  transition: all ease-in-out 500ms; }
+  transition: clip-path ease-in-out 500ms; }
   .site-nav--open {
     clip-path: circle(150% at top right); }
   .site-nav ul {

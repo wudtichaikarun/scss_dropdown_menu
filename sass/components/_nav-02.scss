@@ -39,7 +39,7 @@ header::after {
   // height: 0px;
   // overflow: hidden;
   clip-path: circle(0 at top right);
-  transition: all ease-in-out 500ms;
+  transition: clip-path ease-in-out 500ms;
 
   &--open {
     // height: auto;
@@ -139,7 +139,12 @@ header::after {
     height: auto;
     position: relative;
     background: transparent;
+    
+    // nav positon left light center;
+    // float: left;
     float: right;
+    // text-align: center;
+
     // reset clip-path
     clip-path: inherit;
 
