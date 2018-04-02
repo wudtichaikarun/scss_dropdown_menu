@@ -110,6 +110,49 @@ body {
 .btn-switch__radio_yes:checked ~ .btn-switch__label_yes {
   color: #fff; }
 
+.clearfix::before, .clearfix::after {
+  content: '';
+  display: block; }
+
+.clearfix::after {
+  clear: both; }
+
+#nav-01 {
+  background: #000; }
+  #nav-01 ul ul ul {
+    top: 0 !important;
+    left: 100%; }
+  #nav-01 > ul {
+    margin: 0 auto;
+    width: 80%; }
+    #nav-01 > ul li {
+      display: block;
+      float: left;
+      position: relative; }
+      #nav-01 > ul li ul {
+        margin: 0;
+        padding: 0;
+        display: none;
+        position: absolute;
+        top: 100%;
+        background: #999; }
+        #nav-01 > ul li ul li {
+          float: none;
+          position: relative;
+          height: 4.2rem; }
+    #nav-01 > ul li:hover > ul {
+      display: block; }
+    #nav-01 > ul a {
+      display: block;
+      float: left;
+      width: 17rem;
+      padding: 1rem 2rem;
+      box-sizing: border-box;
+      color: #fff;
+      text-decoration: none; }
+    #nav-01 > ul a:hover {
+      background: #333; }
+
 .container {
   margin: 0 auto;
   width: 95%;

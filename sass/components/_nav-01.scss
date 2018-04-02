@@ -1,13 +1,4 @@
 // NAVBAR
-a {
-  color: $color-white;
-  text-decoration: none;
-}
-
-.nav-bar {
-  background: $color-grey-dark-3;
-}
-
 .clearfix {
   &::before, &::after {
     content: '';
@@ -19,53 +10,61 @@ a {
   }
 }
 
-nav > ul {
-  margin: 0 auto;
-  width: 80%;
-}
 
-// first level
-nav ul li {
-  display: block;
-  float: left;
-  position: relative;
-}
+#nav-01 {
+  background: $color-black;
 
-nav ul a {
-  display: block;
-  float: left;
-  width: 17rem;
-  padding: 1rem 2rem;
-  box-sizing: border-box;
-}
+  // 3nd level
+  & ul ul ul {
+    top: 0 !important;
+    left: 100%; 
+  }
 
-nav ul a:hover {
-  background: $color-grey-dark-1;
-}
+  & > ul {
+    margin: 0 auto;
+    width: 80%;
 
-// 2nd level
-nav ul li ul {
-  margin: 0;
-  padding: 0;
-  display: none;
-  position: absolute;
-  top: 100%;
-  background: $color-grey-dark-3;
-}
+    // first level
+    li {
+      display: block;
+      float: left;
+      position: relative;
+      
+      // 2nd level
+      ul {
+        margin: 0;
+        padding: 0;
+        display: none;
+        position: absolute;
+        top: 100%;
+        background: $color-grey-dark-3;
 
-nav ul li:hover > ul {
-  display: block;
-}
+        li {
+          float: none;
+          position: relative;
+          height: 4.2rem; 
+        }
+      }
+    }
 
-nav ul li ul li {
-  float: none;
-  position: relative;
-  height: 4.2rem;
-}
+    li:hover > ul {
+      display: block;
+    }
 
-// 3nd level
-nav ul ul ul {
-  top: 0;
-  left: 100%; 
-  background: $color-grey-dark-3;
+    a {
+      display: block;
+      float: left;
+      width: 17rem;
+      padding: 1rem 2rem;
+      box-sizing: border-box;
+
+      color: $color-white;
+      text-decoration: none;
+    }
+
+    a:hover {
+      background: $color-grey-dark-1;
+    }
+  }
+
 }
