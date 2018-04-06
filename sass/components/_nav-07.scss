@@ -1,0 +1,114 @@
+$nav-07-bgColor: #444;
+$nav-07-textColor: #f9f9f9;
+$nav-07-bgHover: rgba(0,0,0,.25);
+
+#nav-07  {
+  margin: 0;
+  padding: 0;
+
+  ul {
+    list-style: none;
+    background-color: $nav-07-bgColor;
+    display: flex;
+    flex-direction: column;
+
+    li {
+      &:hover {
+        background: $nav-07-bgHover;
+      }
+
+      a {
+        text-decoration: none;
+        display: block;
+        padding: 1.5rem 1rem;
+        color: $nav-07-textColor;
+      }
+    }
+
+  }
+
+  .arrow {
+    font-family: FontAwesome;
+    float: right;
+
+    &-down::after {
+      // for check code https://fontawesome.com/cheatsheet
+      content: '\f107';
+    }
+
+    &-right::after {
+      content: '\f105';
+    }
+  }
+}
+
+// display size 480px <=
+@media only screen and (max-width: 480px) {
+  #nav-07 {
+    .has-children {
+
+      ul {
+        
+        li {
+          a {
+            padding-left: 3rem;
+          }
+        }
+      }
+    }
+
+    .has-children ul .has-children ul {
+      a {
+        padding-left: 4rem;
+      }
+    }
+
+    .arrow-down::after {
+      // for check code https://fontawesome.com/cheatsheet
+      content: '\f107';
+    }
+  }
+  
+}
+
+// display size more than 480px
+@media only screen and (min-width: 480px) {
+  #nav-07 {
+    // flex container
+    ul {
+      flex-direction: row;
+      justify-content: space-between;
+
+      // flex items
+      li {
+        position: relative;
+        // for get ride of Menu space
+        flex: 1 0 auto;
+      }
+
+    }
+
+    // show sub menu
+    ul li:hover ul,
+    .has-children ul .has-children:hover ul 
+     {
+      display: flex;
+      flex-direction: column;
+    }
+
+    // sub-item position to right hand side
+    .has-children ul .has-children ul {
+      // position absolute  come from class below
+      left: 100%;
+      top: 0;
+    }
+
+    // hide sub menu 
+    .has-children ul,
+    .has-children ul .has-children ul {
+      display: none;
+      width: 100%;
+      position: absolute;
+    }
+  }
+}

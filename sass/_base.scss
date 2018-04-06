@@ -54,8 +54,14 @@ body {
   line-height: 1.3;
   letter-spacing: .7px;
   color: $color-white;
-  background-color: $color-white;
-  padding: 4rem;
+  background-color: #f9f9f9;
+
+  #body-wrapper {
+    margin: 0 auto;
+    max-width: 96rem;
+    box-shadow: 0 0 2rem 2rem #ccc;
+    background-color: #fff;
+  }
 
   @include respond(phone) {
     padding: 0;

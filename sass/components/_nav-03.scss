@@ -9,8 +9,7 @@
     height: 7rem;
     width: 7rem;
     position: fixed;
-    top: 12rem;
-    // top: 6rem;
+    top: 6rem;
     right: 6rem;
     border-radius: 50%;
     z-index: 2000;
@@ -21,14 +20,12 @@
     cursor: pointer;
 
     @include respond(tab-port) {
-      // top: 4rem;
-      top: 8rem;
+      top: 4rem;
       right: 4rem;
     }
 
     @include respond(phone) {
-      // top: 3rem;
-      top: 8rem;
+      top: 3rem;
       right: 3rem;
     }
   }
@@ -38,8 +35,7 @@
     width: 6rem;
     border-radius: 50%;
     position: fixed;
-    top: 12rem;
-    // tip: 6.5rem;
+    top: 6.5rem;
     right: 6.5rem;
     background-image: radial-gradient(
       $color-primary-light,
@@ -50,14 +46,12 @@
     // transform: scale(80);
 
     @include respond(tab-port) {
-      // top: 4.5rem;
+      top: 4.5rem;
       right: 4.5rem;
-      top: 8rem;
     }
 
     @include respond(phone) {
-      // top: 3.5rem;
-      top: 8rem;
+      top: 3.5rem;
       right: 3.5rem;
     }
   }
