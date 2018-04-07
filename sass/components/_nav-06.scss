@@ -48,25 +48,11 @@ $nav-06-boxShadow:  0 0 15px 0 rgba(0, 0, 0, .10);
     // hide menu-sub
     display: none;
 
-    padding: 2rem;
+    padding: 0 2rem 2rem 2rem;
 
     // change position li from row to column
     li {
       display: block;
-    }
-
-    .menu-category {
-      margin: 2.5rem 0 .5rem;
-
-      &:first-of-type {
-        margin-top: 0;
-      }
-      // padding-bottom: 1rem;
-
-      // &:not(:first-child) {
-      //   padding-top: 2rem;
-      // }
-
     }
 
     a {
@@ -97,6 +83,29 @@ $nav-06-boxShadow:  0 0 15px 0 rgba(0, 0, 0, .10);
       width: 50%;
     }
 
+  }
+
+  [class^="menu-col-"] {
+
+    margin: 0;
+    padding: 0;
+    
+    a {
+      text-align: center;
+      // border: 1px solid #eee;
+      margin: 0;
+      padding: 2rem;
+
+      img.menu-icon {
+        height: 7rem;
+        // background-color: #fff;
+      }
+
+      p {
+        margin-top: .5rem;
+
+      }
+    }
   }
 
 }

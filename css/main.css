@@ -630,13 +630,9 @@ h1.title, h2 {
     color: #fff;
     width: 100%;
     display: none;
-    padding: 2rem; }
+    padding: 0 2rem 2rem 2rem; }
     #nav-06 .menu-sub li {
       display: block; }
-    #nav-06 .menu-sub .menu-category {
-      margin: 2.5rem 0 .5rem; }
-      #nav-06 .menu-sub .menu-category:first-of-type {
-        margin-top: 0; }
     #nav-06 .menu-sub a {
       padding: 0;
       margin-bottom: .25rem; }
@@ -651,6 +647,17 @@ h1.title, h2 {
     width: 25%; }
   #nav-06 .menu-col-2 {
     width: 50%; }
+  #nav-06 [class^="menu-col-"] {
+    margin: 0;
+    padding: 0; }
+    #nav-06 [class^="menu-col-"] a {
+      text-align: center;
+      margin: 0;
+      padding: 2rem; }
+      #nav-06 [class^="menu-col-"] a img.menu-icon {
+        height: 7rem; }
+      #nav-06 [class^="menu-col-"] a p {
+        margin-top: .5rem; }
 
 #nav-07 {
   margin: 0;
