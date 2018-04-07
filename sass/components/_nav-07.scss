@@ -6,6 +6,7 @@ $nav-07-bgHover: rgba(0,0,0,.25);
   margin: 0;
   padding: 0;
 
+  // main-menu
   ul {
     list-style: none;
     background-color: $nav-07-bgColor;
@@ -74,7 +75,7 @@ $nav-07-bgHover: rgba(0,0,0,.25);
 // display size more than 480px
 @media only screen and (min-width: 480px) {
   #nav-07 {
-    // flex container
+    // main-meu flex container
     ul {
       flex-direction: row;
       justify-content: space-between;

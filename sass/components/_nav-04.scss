@@ -26,8 +26,11 @@
       text-decoration: none;
       text-transform: uppercase;
       color: $color-grey-light-1;
-      font-size: 1.5rem;
+      font-size: 1.7rem;
       line-height: 5rem;
+      &:hover {
+       color: black;
+      }
     }
   
     a + a {
