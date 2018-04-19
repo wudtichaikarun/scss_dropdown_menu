@@ -1,29 +1,114 @@
 $nav-06-bgColor: #777;
 $nav-06-textColor: #fff; 
 $nav-06-hover: #444;
+$nav-06-bgHamberger: #444;
 $nav-06-boxShadow:  0 0 15px 0 rgba(0, 0, 0, .10);
 
 #nav-06 {
   box-sizing: border-box;
   background: $nav-06-bgColor;
   box-shadow: $nav-06-boxShadow;
+  display: block;
+  position: relative;
 
+  // HAMBERGER BTN ------
+  & > .menu {
+    background-color: $nav-06-bgHamberger;
+    height: 4rem;
+    position: relative;
+    display: none;
+
+    // display sixe <= 775px 
+    @include respond(tab-small) {
+      display: block;
+    }
+
+    .menu-toggle {
+      display: block;
+      margin: 0;
+      padding: 0;
+      width: 4rem;
+      height: 4rem;
+      // background-color: green;
+      border-radius: 3px;
+      margin-left: auto;
+      margin-right: 2rem;
+      cursor: pointer;
+
+      & > .hamburger {
+        background: #EBEBD3;
+        height: 3px;
+        width: 3rem;
+        border-radius: 3px;
+        // center parent
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+
+        &::before, &::after {
+          content: '';
+          background: #EBEBD3;
+          display: block;
+          width: 3rem;
+          height: 3px;
+          border-radius: 3px;
+          transition: all ease-in-out 500ms;
+        }
+
+        &::before {
+          transform: translateY(-7px);
+        }
+
+        &::after {
+          transform: translateY(4px);
+        }
+      }
+    }
+  }
+
+  // main-menu
   ul {
     margin: 0;
     padding: 0;
     list-style: none;
     position: relative;
+
+    // display sixe <= 775px 
+    @include respond(tab-small) {
+      width: 100vw;
+      position: relative;
+      text-align: center;
+      
+      // hide main-manu and sub menu
+      max-height: 0;
+      transition: max-height 0.5s ease-out;
+      overflow: hidden;
+    }
   }
 
   li {
     display: inline-block;
 
+    // display sixe <= 775px main-menu 
+    @include respond(tab-small) {
+      display: block;
+    }
+
     &:hover {
       background: $nav-06-hover;
+
+      // display sixe <= 775px 
+      @include respond(tab-small) {
+        background-color: rgba(0, 0, 0, .10);
+      }
 
       // show menu-sub
       .menu-sub {
         display: block;
+        opacity: 0;
+        animation: translateFromTop 100ms ease-in forwards;
       }
       
       a {
@@ -47,8 +132,14 @@ $nav-06-boxShadow:  0 0 15px 0 rgba(0, 0, 0, .10);
     width: 100%;
     // hide menu-sub
     display: none;
-
     padding: 0 2rem 2rem 2rem;
+
+    // display sixe <= 775px 
+    @include respond(tab-small) {
+      position: relative;
+      margin: 0;
+      padding: 0;
+    }
 
     // change position li from row to column
     li {
@@ -59,13 +150,24 @@ $nav-06-boxShadow:  0 0 15px 0 rgba(0, 0, 0, .10);
       padding: 0;
       margin-bottom: .25rem;
 
+      // display sixe <= 775px 
+      @include respond(tab-small) {
+        margin: 0;
+        padding: 0;
+      }
+
       &:hover {
         text-decoration: underline;
+        // display sixe <= 775px 
+        @include respond(tab-small) {
+          background: rgba(0, 0, 0, .10);
+        }
       }
     }
 
   }
 
+  // SUBMENU-LAYOUT
   .menu-col-1,
   .menu-col-2,
   .menu-col-3,
@@ -83,6 +185,13 @@ $nav-06-boxShadow:  0 0 15px 0 rgba(0, 0, 0, .10);
       width: 50%;
     }
 
+    &-1, &-2, &-3, &-4 {
+      // display sixe <= 775px 
+      @include respond(tab-small) {
+        width: 100%;
+      }
+    }
+
   }
 
   [class^="menu-col-"] {
@@ -95,17 +204,59 @@ $nav-06-boxShadow:  0 0 15px 0 rgba(0, 0, 0, .10);
       // border: 1px solid #eee;
       margin: 0;
       padding: 2rem;
+      // display sixe <= 775px 
+      @include respond(tab-small) {
+        padding: 1rem 0 1rem 5rem;
+      }
 
       img.menu-icon {
         height: 7rem;
-        // background-color: #fff;
+        // display sixe <= 775px 
+        @include respond(tab-small) {
+          display: none;
+        }
       }
 
       p {
         margin-top: .5rem;
-
       }
     }
   }
 
+  // HAMBERGER FUNTIONALITY
+  .open .hamburger {
+    transform: translateX(-1.5rem) rotate(45deg) !important;
+  }
+
+  .open .hamburger::before {
+    opacity: 0;
+  }
+
+  .open .hamburger::after {
+    transform: translateY(-3px) rotate(-90deg) !important;
+  }
+
+  #nav {
+    // class menu-open add by jquery when click hamberger menu
+
+    .menu-open {
+      max-height: 50rem;
+      transition: max-height .5s ease-in;
+    }
+  }
+
+
+
+}
+
+@keyframes translateFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-3rem) ;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
